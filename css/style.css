@@ -1,1 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+figure {
+  background: white;
+  padding: 10px;
+  border: 2px solid #ccc;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* ===== Tablet View (≥772px) ===== */
+@media (min-width: 772px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    border-radius: 50%;
+  }
+
+  .wide {
+    grid-column: span 2;
+  }
+}
+
+/* ===== Desktop View (≥992px) ===== */
+@media (min-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+
+  img {
+    border-radius: 0;
+  }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ===== Dark Mode ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #eee;
+  }
+
+  figure {
+    background: #1e1e1e;
+    border-color: black;
+  }
+
+  figcaption {
+    color: #ffeb99;
+  }
+}
 
